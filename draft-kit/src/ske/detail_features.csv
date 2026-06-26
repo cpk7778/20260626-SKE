@@ -1,0 +1,169 @@
+horizon,energy,feature,group,unit,shap_raw,shap_mj,shap_mwon
+D-1,FG,CDU,원유처리량,BBL,-157.7,-0.9983,-17.8461
+D-1,FG,FO,원유조성,BBL,0.0,0.0,0.0
+D-1,FG,EHC,원유조성,BBL,-138.35,-0.8758,-15.6561
+D-1,FG,H/S,원유조성,BBL,87.94,0.5567,9.9514
+D-1,FG,Mild,원유조성,BBL,-391.33,-2.4773,-44.2855
+D-1,FG,L/S,원유조성,BBL,98.18,0.6215,11.1109
+D-1,FG,RFCC_ratio,2차공정 처리비율,BBL,165.18,1.0456,18.6922
+D-1,FG,RDS_ratio,2차공정 처리비율,BBL,-40.29,-0.255,-4.5593
+D-1,FG,UC_ratio,2차공정 처리비율,BBL,256.52,1.6239,29.0292
+D-1,FG,CDU_ma7,원유처리량,BBL,-54.96,-0.3479,-6.2194
+D-1,FG,CDU_diff,원유처리량,BBL,-43.01,-0.2723,-4.8673
+D-1,FG,ATM_Temp,환경/계절,BBL,-76.03,-0.4813,-8.6041
+D-1,FG,heavy_ratio,원유조성,BBL,-775.75,-4.9109,-87.7889
+D-1,FG,light_ratio,원유조성,BBL,-48.52,-0.3072,-5.4908
+D-1,Steam,CDU,원유처리량,ESSTON,24.47,0.0758,0.7413
+D-1,Steam,FO,원유조성,ESSTON,-0.18,-0.0006,-0.0054
+D-1,Steam,EHC,원유조성,ESSTON,-0.37,-0.0012,-0.0113
+D-1,Steam,H/S,원유조성,ESSTON,27.42,0.085,0.8306
+D-1,Steam,Mild,원유조성,ESSTON,-18.27,-0.0566,-0.5533
+D-1,Steam,L/S,원유조성,ESSTON,0.06,0.0002,0.0018
+D-1,Steam,RFCC_ratio,2차공정 처리비율,ESSTON,-17.77,-0.0551,-0.5381
+D-1,Steam,RDS_ratio,2차공정 처리비율,ESSTON,-3.2,-0.0099,-0.0971
+D-1,Steam,UC_ratio,2차공정 처리비율,ESSTON,11.12,0.0345,0.3367
+D-1,Steam,CDU_ma7,원유처리량,ESSTON,-5.56,-0.0172,-0.1683
+D-1,Steam,CDU_diff,원유처리량,ESSTON,-14.39,-0.0446,-0.4359
+D-1,Steam,ATM_Temp,환경/계절,ESSTON,9.65,0.0299,0.2923
+D-1,Steam,heavy_ratio,원유조성,ESSTON,98.23,0.3044,2.9753
+D-1,Steam,light_ratio,원유조성,ESSTON,87.86,0.2723,2.6612
+D-1,Steam,is_rain,강우,ESSTON,-0.75,-0.0023,-0.0226
+D-1,Steam,rain_intensity,강우,ESSTON,-22.53,-0.0698,-0.6823
+D-1,Steam,Rain_lag1,강우,ESSTON,4.32,0.0134,0.1309
+D-1,Steam,Rain_cumsum3,강우,ESSTON,-0.14,-0.0004,-0.0043
+D-1,Steam,days_since_rain,강우,ESSTON,-0.81,-0.0025,-0.0244
+D-1,Steam,Rain_x_cold,강우,ESSTON,-0.88,-0.0027,-0.0267
+D-1,Steam,season_sin,환경/계절,ESSTON,28.69,0.0889,0.8691
+D-1,Steam,season_cos,환경/계절,ESSTON,74.24,0.23,2.2486
+D-1,Steam,HDD,환경/계절,ESSTON,-2.44,-0.0076,-0.0738
+D-1,Steam,ATM_Temp_ma7,환경/계절,ESSTON,-9.46,-0.0293,-0.2865
+D-1,ELEC,CDU,원유처리량,KWH,-154.78,-0.0015,-0.0274
+D-1,ELEC,FO,원유조성,KWH,-0.04,-0.0,-0.0
+D-1,ELEC,EHC,원유조성,KWH,-3.24,-0.0,-0.0006
+D-1,ELEC,H/S,원유조성,KWH,2135.84,0.0204,0.378
+D-1,ELEC,Mild,원유조성,KWH,-1290.44,-0.0123,-0.2284
+D-1,ELEC,L/S,원유조성,KWH,1274.14,0.0122,0.2255
+D-1,ELEC,RFCC_ratio,2차공정 처리비율,KWH,2681.68,0.0256,0.4747
+D-1,ELEC,RDS_ratio,2차공정 처리비율,KWH,-7.6,-1e-04,-0.0013
+D-1,ELEC,UC_ratio,2차공정 처리비율,KWH,7321.39,0.0699,1.2959
+D-1,ELEC,CDU_ma7,원유처리량,KWH,-56.12,-0.0005,-0.0099
+D-1,ELEC,CDU_diff,원유처리량,KWH,-40.79,-0.0004,-0.0072
+D-1,ELEC,ATM_Temp,환경/계절,KWH,-99.62,-0.001,-0.0176
+D-1,ELEC,heavy_ratio,원유조성,KWH,-608.08,-0.0058,-0.1076
+D-1,ELEC,light_ratio,원유조성,KWH,2738.18,0.0261,0.4847
+D-1,ELEC,season_sin,환경/계절,KWH,-722.41,-0.0069,-0.1279
+D-1,ELEC,season_cos,환경/계절,KWH,-1435.37,-0.0137,-0.2541
+D-1,ELEC,HDD,환경/계절,KWH,-3.01,-0.0,-0.0005
+D-1,ELEC,ATM_Temp_ma7,환경/계절,KWH,-41.98,-0.0004,-0.0074
+W-1,FG,CDU,원유처리량,BBL,-669.57,-4.2387,-75.7727
+W-1,FG,FO,원유조성,BBL,0.0,0.0,0.0
+W-1,FG,EHC,원유조성,BBL,213.5,1.3515,24.1607
+W-1,FG,H/S,원유조성,BBL,278.12,1.7606,31.4736
+W-1,FG,Mild,원유조성,BBL,-1505.51,-9.5305,-170.3725
+W-1,FG,L/S,원유조성,BBL,775.1,4.9067,87.7148
+W-1,FG,RFCC_ratio,2차공정 처리비율,BBL,1462.74,9.2598,165.5322
+W-1,FG,RDS_ratio,2차공정 처리비율,BBL,-163.79,-1.0369,-18.5356
+W-1,FG,UC_ratio,2차공정 처리비율,BBL,2888.63,18.2863,326.8948
+W-1,FG,CDU_ma7,원유처리량,BBL,-216.7,-1.3718,-24.5226
+W-1,FG,CDU_diff,원유처리량,BBL,-68.27,-0.4322,-7.7264
+W-1,FG,ATM_Temp,환경/계절,BBL,-225.5,-1.4275,-25.519
+W-1,FG,heavy_ratio,원유조성,BBL,-2958.93,-18.7313,-334.8498
+W-1,FG,light_ratio,원유조성,BBL,-77.69,-0.4918,-8.7917
+W-1,Steam,CDU,원유처리량,ESSTON,87.17,0.2701,2.6403
+W-1,Steam,FO,원유조성,ESSTON,-1.33,-0.0041,-0.0402
+W-1,Steam,EHC,원유조성,ESSTON,-7.15,-0.0222,-0.2166
+W-1,Steam,H/S,원유조성,ESSTON,34.26,0.1062,1.0378
+W-1,Steam,Mild,원유조성,ESSTON,-113.8,-0.3526,-3.4469
+W-1,Steam,L/S,원유조성,ESSTON,20.87,0.0647,0.6322
+W-1,Steam,RFCC_ratio,2차공정 처리비율,ESSTON,-250.34,-0.7758,-7.5829
+W-1,Steam,RDS_ratio,2차공정 처리비율,ESSTON,-34.51,-0.1069,-1.0453
+W-1,Steam,UC_ratio,2차공정 처리비율,ESSTON,18.16,0.0563,0.5501
+W-1,Steam,CDU_ma7,원유처리량,ESSTON,-79.18,-0.2454,-2.3983
+W-1,Steam,CDU_diff,원유처리량,ESSTON,-104.92,-0.3251,-3.1781
+W-1,Steam,ATM_Temp,환경/계절,ESSTON,36.35,0.1127,1.1011
+W-1,Steam,heavy_ratio,원유조성,ESSTON,243.49,0.7545,7.3753
+W-1,Steam,light_ratio,원유조성,ESSTON,60.58,0.1877,1.8349
+W-1,Steam,is_rain,강우,ESSTON,-2.61,-0.0081,-0.0789
+W-1,Steam,rain_intensity,강우,ESSTON,-349.14,-1.0819,-10.5753
+W-1,Steam,Rain_lag1,강우,ESSTON,11.54,0.0358,0.3496
+W-1,Steam,Rain_cumsum3,강우,ESSTON,-28.17,-0.0873,-0.8534
+W-1,Steam,days_since_rain,강우,ESSTON,-13.45,-0.0417,-0.4075
+W-1,Steam,Rain_x_cold,강우,ESSTON,-13.31,-0.0412,-0.403
+W-1,Steam,season_sin,환경/계절,ESSTON,24.9,0.0772,0.7543
+W-1,Steam,season_cos,환경/계절,ESSTON,272.55,0.8446,8.2554
+W-1,Steam,HDD,환경/계절,ESSTON,-14.44,-0.0448,-0.4374
+W-1,Steam,ATM_Temp_ma7,환경/계절,ESSTON,-136.25,-0.4222,-4.1269
+W-1,ELEC,CDU,원유처리량,KWH,-5974.72,-0.0571,-1.0575
+W-1,ELEC,FO,원유조성,KWH,-2.43,-0.0,-0.0004
+W-1,ELEC,EHC,원유조성,KWH,1007.32,0.0096,0.1783
+W-1,ELEC,H/S,원유조성,KWH,5851.23,0.0559,1.0357
+W-1,ELEC,Mild,원유조성,KWH,-24789.93,-0.2367,-4.3878
+W-1,ELEC,L/S,원유조성,KWH,6339.52,0.0605,1.1221
+W-1,ELEC,RFCC_ratio,2차공정 처리비율,KWH,15343.6,0.1465,2.7158
+W-1,ELEC,RDS_ratio,2차공정 처리비율,KWH,-615.53,-0.0059,-0.1089
+W-1,ELEC,UC_ratio,2차공정 처리비율,KWH,47488.88,0.4535,8.4055
+W-1,ELEC,CDU_ma7,원유처리량,KWH,-1211.79,-0.0116,-0.2145
+W-1,ELEC,CDU_diff,원유처리량,KWH,-2668.43,-0.0255,-0.4723
+W-1,ELEC,ATM_Temp,환경/계절,KWH,-4721.15,-0.0451,-0.8356
+W-1,ELEC,heavy_ratio,원유조성,KWH,-28255.98,-0.2698,-5.0013
+W-1,ELEC,light_ratio,원유조성,KWH,6986.42,0.0667,1.2366
+W-1,ELEC,season_sin,환경/계절,KWH,-698.62,-0.0067,-0.1237
+W-1,ELEC,season_cos,환경/계절,KWH,-34106.01,-0.3257,-6.0368
+W-1,ELEC,HDD,환경/계절,KWH,-140.19,-0.0013,-0.0248
+W-1,ELEC,ATM_Temp_ma7,환경/계절,KWH,-420.17,-0.004,-0.0744
+M-1,FG,CDU,원유처리량,BBL,-462.49,-2.9278,-52.3379
+M-1,FG,FO,원유조성,BBL,0.0,0.0,0.0
+M-1,FG,EHC,원유조성,BBL,-2369.0,-14.9968,-268.0897
+M-1,FG,H/S,원유조성,BBL,4164.0,26.3599,471.2228
+M-1,FG,Mild,원유조성,BBL,-6972.64,-44.1399,-789.0658
+M-1,FG,L/S,원유조성,BBL,3517.05,22.2645,398.0105
+M-1,FG,RFCC_ratio,2차공정 처리비율,BBL,3660.3,23.1713,414.221
+M-1,FG,RDS_ratio,2차공정 처리비율,BBL,132.78,0.8406,15.0264
+M-1,FG,UC_ratio,2차공정 처리비율,BBL,8231.31,52.1078,931.5043
+M-1,FG,CDU_ma7,원유처리량,BBL,78.51,0.497,8.885
+M-1,FG,CDU_diff,원유처리량,BBL,-4213.71,-26.6746,-476.8484
+M-1,FG,ATM_Temp,환경/계절,BBL,-1049.57,-6.6442,-118.7754
+M-1,FG,heavy_ratio,원유조성,BBL,-14565.06,-92.2033,-1648.2699
+M-1,FG,light_ratio,원유조성,BBL,-2394.23,-15.1566,-270.946
+M-1,Steam,CDU,원유처리량,ESSTON,403.91,1.2517,12.2345
+M-1,Steam,FO,원유조성,ESSTON,-7.89,-0.0245,-0.2391
+M-1,Steam,EHC,원유조성,ESSTON,-25.96,-0.0804,-0.7862
+M-1,Steam,H/S,원유조성,ESSTON,188.11,0.5829,5.6979
+M-1,Steam,Mild,원유조성,ESSTON,-568.73,-1.7624,-17.2267
+M-1,Steam,L/S,원유조성,ESSTON,44.11,0.1367,1.336
+M-1,Steam,RFCC_ratio,2차공정 처리비율,ESSTON,-681.74,-2.1126,-20.6498
+M-1,Steam,RDS_ratio,2차공정 처리비율,ESSTON,58.23,0.1804,1.7636
+M-1,Steam,UC_ratio,2차공정 처리비율,ESSTON,302.9,0.9386,9.1748
+M-1,Steam,CDU_ma7,원유처리량,ESSTON,-294.1,-0.9114,-8.9082
+M-1,Steam,CDU_diff,원유처리량,ESSTON,-273.67,-0.8481,-8.2895
+M-1,Steam,ATM_Temp,환경/계절,ESSTON,91.64,0.284,2.7757
+M-1,Steam,heavy_ratio,원유조성,ESSTON,861.2,2.6687,26.0858
+M-1,Steam,light_ratio,원유조성,ESSTON,1084.99,3.3622,32.8644
+M-1,Steam,is_rain,강우,ESSTON,5.94,0.0184,0.1799
+M-1,Steam,rain_intensity,강우,ESSTON,-1458.43,-4.5194,-44.1757
+M-1,Steam,Rain_lag1,강우,ESSTON,37.4,0.1159,1.1328
+M-1,Steam,Rain_cumsum3,강우,ESSTON,-61.23,-0.1898,-1.8548
+M-1,Steam,days_since_rain,강우,ESSTON,8.72,0.027,0.2642
+M-1,Steam,Rain_x_cold,강우,ESSTON,-58.45,-0.1811,-1.7704
+M-1,Steam,season_sin,환경/계절,ESSTON,-655.26,-2.0305,-19.8477
+M-1,Steam,season_cos,환경/계절,ESSTON,321.31,0.9957,9.7326
+M-1,Steam,HDD,환경/계절,ESSTON,-113.37,-0.3513,-3.4341
+M-1,Steam,ATM_Temp_ma7,환경/계절,ESSTON,-537.83,-1.6667,-16.291
+M-1,ELEC,CDU,원유처리량,KWH,-47205.1,-0.4508,-8.3553
+M-1,ELEC,FO,원유조성,KWH,-21.76,-0.0002,-0.0039
+M-1,ELEC,EHC,원유조성,KWH,-5087.61,-0.0486,-0.9005
+M-1,ELEC,H/S,원유조성,KWH,28757.34,0.2746,5.09
+M-1,ELEC,Mild,원유조성,KWH,-217495.05,-2.0771,-38.4966
+M-1,ELEC,L/S,원유조성,KWH,25527.2,0.2438,4.5183
+M-1,ELEC,RFCC_ratio,2차공정 처리비율,KWH,43558.56,0.416,7.7099
+M-1,ELEC,RDS_ratio,2차공정 처리비율,KWH,12021.15,0.1148,2.1277
+M-1,ELEC,UC_ratio,2차공정 처리비율,KWH,113120.13,1.0803,20.0223
+M-1,ELEC,CDU_ma7,원유처리량,KWH,1716.76,0.0164,0.3039
+M-1,ELEC,CDU_diff,원유처리량,KWH,-226505.6,-2.1631,-40.0915
+M-1,ELEC,ATM_Temp,환경/계절,KWH,-33276.86,-0.3178,-5.89
+M-1,ELEC,heavy_ratio,원유조성,KWH,-217683.56,-2.0789,-38.53
+M-1,ELEC,light_ratio,원유조성,KWH,7495.07,0.0716,1.3266
+M-1,ELEC,season_sin,환경/계절,KWH,39523.1,0.3774,6.9956
+M-1,ELEC,season_cos,환경/계절,KWH,-61792.28,-0.5901,-10.9372
+M-1,ELEC,HDD,환경/계절,KWH,-1544.23,-0.0147,-0.2733
+M-1,ELEC,ATM_Temp_ma7,환경/계절,KWH,-14167.17,-0.1353,-2.5076

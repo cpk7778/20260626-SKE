@@ -1,0 +1,29 @@
+file,column,type,unit,description,chart_type
+dashboard_kpi.csv,date,date,YYYY-MM-DD,날짜,x축
+dashboard_kpi.csv,fg_bbl,float,BBL,Fuel Gas 소비량 (원본),line/area
+dashboard_kpi.csv,stm_esston,float,ESSTON,Steam 소비량 (원본),line/area
+dashboard_kpi.csv,elec_kwh,float,KWH,전력 소비량 (원본),line/area
+dashboard_kpi.csv,cdu_bbl,float,BBL,원유처리량,line
+dashboard_kpi.csv,total_mj,float,M MJ,총 에너지 (MJ 통합),line/area
+dashboard_kpi.csv,sec_mj_per_bbl,float,MJ/BBL,에너지 원단위 (SEC),line + 기준선
+dashboard_kpi.csv,total_cost_mwon,float,M won,총 에너지 비용 (백만원),stacked area
+dashboard_kpi.csv,unit_cost_won_per_bbl,float,won/BBL,비용 원단위,line + 기준선
+dashboard_kpi.csv,cqi_avg,float,-,"해석 신뢰도 (0=최고, <0.5=High, <1.0=Med, ≥1.0=Low)",scatter + 기준선
+dashboard_kpi.csv,cqi_level,string,-,CQI 등급 (High/Medium/Low),색상 매핑
+dashboard_factors.csv,horizon,string,-,"분석 기간 (D-1=전일, W-1=7일, M-1=30일)",필터
+dashboard_factors.csv,group,string,-,"운전요인 그룹명 (원유조성, 2차공정 처리비율 등)",y축 라벨
+dashboard_factors.csv,color,string,hex,그룹 대표색상 (#RRGGBB),색상
+dashboard_factors.csv,impact_mj,float,M MJ,해당 그룹의 에너지 변동 기여량 (MJ),waterfall/bar
+dashboard_factors.csv,impact_mwon,float,M won,해당 그룹의 비용 변동 기여량 (백만원),waterfall/bar
+dashboard_factors.csv,fg_bbl,float,BBL,FG 변동 기여 (BBL 원본),bar
+dashboard_factors.csv,stm_esston,float,ESSTON,Steam 변동 기여 (ESSTON 원본),bar
+dashboard_factors.csv,elec_kwh,float,KWH,전력 변동 기여 (KWH 원본),bar
+dashboard_factors.csv,cqi_avg,float,-,해당 기간 평균 CQI (낮을수록 신뢰),색상 매핑
+dashboard_factors.csv,cqi_level,string,-,"CQI 등급 (High=신뢰, Medium=보통, Low=주의)",배지/아이콘
+detail_features.csv,horizon,string,-,분석 기간,필터
+detail_features.csv,energy,string,-,에너지 종류 (FG/Steam/ELEC),필터
+detail_features.csv,feature,string,-,모델 입력 피처명,y축
+detail_features.csv,group,string,-,피처가 속한 운전요인 그룹,색상
+detail_features.csv,shap_raw,float,에너지별,피처 기여량 (원본 단위: BBL/ESSTON/KWH),bar
+detail_features.csv,shap_mj,float,M MJ,피처 기여량 (MJ 환산),bar
+detail_features.csv,shap_mwon,float,M won,피처 기여량 (비용 환산),bar

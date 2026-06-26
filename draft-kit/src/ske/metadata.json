@@ -1,0 +1,73 @@
+{
+  "target_date": "2026-03-16",
+  "data_range": "2025-07-02 ~ 2026-03-31",
+  "horizons": {
+    "D-1": "2026-03-16",
+    "W-1": "2026-03-10 ~ 2026-03-16",
+    "M-1": "2026-02-15 ~ 2026-03-16"
+  },
+  "model": {
+    "type": "Unified Diff (AR 없음, 운전변수 100%)",
+    "version": "v1.0_optuna",
+    "formula": "dy = f(ops_features), y_t = y_{t-1} + dy_pred",
+    "correction": "corrected_SHAP = SHAP + residual * (|SHAP| / sum|SHAP|)"
+  },
+  "cost_factors": {
+    "FG": {
+      "value": 113166,
+      "unit": "won/FOEB(BBL)"
+    },
+    "Steam": {
+      "value": 30290,
+      "unit": "won/ESSTON",
+      "note": "61,878 won/FOEB * 0.4894 FOEB/ESSTON"
+    },
+    "ELEC": {
+      "value": 177,
+      "unit": "won/KWH"
+    }
+  },
+  "mj_factors": {
+    "FG": {
+      "value": 6330.44,
+      "unit": "MJ/BBL"
+    },
+    "Steam": {
+      "value": 3098.82,
+      "unit": "MJ/ESSTON"
+    },
+    "ELEC": {
+      "value": 9.55,
+      "unit": "MJ/KWH"
+    }
+  },
+  "cqi": {
+    "formula": "|residual| / sum(|SHAP|)",
+    "levels": {
+      "High": "< 0.5 (신뢰)",
+      "Medium": "0.5 ~ 1.0 (보통)",
+      "Low": ">= 1.0 (주의)"
+    },
+    "today": 0.405
+  },
+  "kpi_today": {
+    "total_mj": 563.4,
+    "sec": 940.4,
+    "total_cost_mwon": 10089.8,
+    "unit_cost_won_per_bbl": 16843
+  },
+  "groups": [
+    "원유처리량",
+    "2차공정 처리비율",
+    "원유조성",
+    "환경/계절",
+    "강우"
+  ],
+  "group_colors": {
+    "원유처리량": "#1976D2",
+    "2차공정 처리비율": "#FF9800",
+    "원유조성": "#8E24AA",
+    "환경/계절": "#43A047",
+    "강우": "#0288D1"
+  }
+}

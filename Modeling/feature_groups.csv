@@ -1,0 +1,25 @@
+﻿Feature,Group,Group_KR,Description,Color,Used_FG,Used_STM,Used_ELEC,Monotone_FG,Monotone_STM,Monotone_ELEC
+CDU,Throughput,원유처리량,CDU 원유처리량 (BBL/day),#1976D2,Y,Y,Y,1,0,1
+CDU_ma7,Throughput,원유처리량,CDU 7일 이동평균 (조업 안정성),#1976D2,Y,Y,Y,1,0,1
+CDU_diff,Throughput,원유처리량,CDU 전일 대비 변화량,#1976D2,Y,Y,Y,0,0,0
+RFCC_ratio,Secondary_Process,2차공정 처리비율,원유 처리대비 RFCC계열 처리량 비율,#FF9800,Y,Y,Y,1,-1,1
+RDS_ratio,Secondary_Process,2차공정 처리비율,원유 처리대비 RDS계열 처리량 비율,#FF9800,Y,Y,Y,1,0,1
+UC_ratio,Secondary_Process,2차공정 처리비율,원유 처리대비 UC공정 처리량 비율,#FF9800,Y,Y,Y,1,0,1
+FO,Crude_Slate,원유조성,FO 비율,#8E24AA,Y,Y,Y,1,0,0
+EHC,Crude_Slate,원유조성,초중질유(Extra Heavy Crude) 비율,#8E24AA,Y,Y,Y,1,0,0
+H/S,Crude_Slate,원유조성,고유황유(High Sulfur) 비율,#8E24AA,Y,Y,Y,-1,0,0
+Mild,Crude_Slate,원유조성,중경질유(Mild Crude) 비율,#8E24AA,Y,Y,Y,-1,0,0
+L/S,Crude_Slate,원유조성,저유황유(Low Sulfur) 비율,#8E24AA,Y,Y,Y,-1,0,0
+heavy_ratio,Crude_Slate,원유조성,중질유 합계 (H/S + EHC),#8E24AA,Y,Y,Y,0,0,0
+light_ratio,Crude_Slate,원유조성,경질유 합계 (L/S + Mild),#8E24AA,Y,Y,Y,0,0,0
+ATM_Temp,Environment,환경/계절,대기온도 (℃),#43A047,Y,Y,Y,0,-1,0
+ATM_Temp_ma7,Environment,환경/계절,대기온도 7일 이동평균,#43A047,,Y,Y,,-1,0
+HDD,Environment,환경/계절,"난방도일 (Heating Degree Day, max(18-T, 0))",#43A047,,Y,Y,,1,0
+season_sin,Environment,환경/계절,계절 사인 (sin(2π·DOY/365)),#43A047,,Y,Y,,0,0
+season_cos,Environment,환경/계절,계절 코사인 (cos(2π·DOY/365)),#43A047,,Y,Y,,0,0
+is_rain,Rainfall,강우,강우 여부 (0/1),#0288D1,,Y,,,1,
+rain_intensity,Rainfall,강우,"강우 강도 (0=없음, 1=약, 2=중, 3=강)",#0288D1,,Y,,,1,
+Rain_lag1,Rainfall,강우,전일 강수량,#0288D1,,Y,,,1,
+Rain_cumsum3,Rainfall,강우,3일 누적 강수량,#0288D1,,Y,,,1,
+days_since_rain,Rainfall,강우,최종 강우 후 경과일,#0288D1,,Y,,,-1,
+Rain_x_cold,Rainfall,강우,강우×한냉 상호작용 (Rain × HDD),#0288D1,,Y,,,1,
