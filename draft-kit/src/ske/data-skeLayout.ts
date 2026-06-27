@@ -17,6 +17,7 @@ export const SKE_CARD_IDS = [
   'kpi-summary',
   'kpi-energy',
   'chart-kpi',
+  'chart-dataset',
   'chart-factors',
   'chart-detail',
 ] as const;
@@ -24,11 +25,16 @@ export const SKE_CARD_IDS = [
 export type SkeCardId = typeof SKE_CARD_IDS[number];
 
 // ── 기본 레이아웃 ─────────────────────────────────────────────────────────────
-// Row 0: 헤더 | 요약 | 에너지 구성
-// Row 1: KPI 시계열 | 변동요인 | 드릴다운
+// 단일 Row, 3열:
+// Col 0 (스택): kpi-summary / kpi-energy / kpi-header
+// Col 1 (스택): chart-kpi / chart-dataset
+// Col 2 (스택): chart-factors / chart-detail
 export const INITIAL_SKE_LAYOUT: SkeLayout = [
-  [['kpi-header'], ['kpi-summary'], ['kpi-energy']],
-  [['chart-kpi'], ['chart-factors'], ['chart-detail']],
+  [
+    ['kpi-summary', 'kpi-energy', 'kpi-header'],
+    ['chart-kpi', 'chart-dataset'],
+    ['chart-factors', 'chart-detail'],
+  ],
 ];
 
 // ── ApcLayout 유틸 복제 ───────────────────────────────────────────────────────

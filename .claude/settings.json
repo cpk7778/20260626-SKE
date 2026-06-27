@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(git push *)",
+      "Bash(gh repo *)",
+      "Bash(git remote *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git reset *)",
+      "Bash(git branch *)",
+      "Bash(git init *)",
+      "Bash(node -e \"const {SKE_KPI} = require\\('./src/ske/data-ske.ts'\\); console.log\\('impossible'\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)"
+    ],
+    "additionalDirectories": [
+      "z:\\Coding\\20260125-investops\\draft-kit",
+      "z:\\Coding\\20260626-SKE\\Service\\output"
+    ]
+  }
+}

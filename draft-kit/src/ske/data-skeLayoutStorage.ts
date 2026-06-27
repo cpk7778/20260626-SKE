@@ -1,7 +1,7 @@
 import { cloneSkeLayout, INITIAL_SKE_LAYOUT, SKE_CARD_IDS, type SkeLayout } from './data-skeLayout';
 
-const LAYOUT_KEY = 'ske-layout-v1';
-const CARDS_KEY  = 'ske-cards-v1';
+const LAYOUT_KEY = 'ske-layout-v14';
+const CARDS_KEY  = 'ske-cards-v14';
 
 const KNOWN_IDS = new Set(SKE_CARD_IDS);
 
@@ -57,4 +57,19 @@ export function saveSkeCards(cards: SkeCardSizes): void {
 
 export function resetSkeCards(): void {
   try { localStorage.removeItem(CARDS_KEY); } catch { /* ignore */ }
+}
+
+// ── 스냅샷 상태 타입 + normalize ──────────────────────────────────────────────
+export interface SkeLayoutSnapshot {
+  layout: SkeLayout;
+  cards: SkeCardSizes;
+}
+
+export function normalizeSkeSnapshot(value: unknown): SkeLayoutSnapshot | null {
+  if (typeof value !== 'object' || value === null) return null;
+  const v = value as Record<string, unknown>;
+  if (!isValidLayout(v.layout)) return null;
+  const cards = (typeof v.cards === 'object' && v.cards !== null && !Array.isArray(v.cards))
+    ? v.cards as SkeCardSizes : {};
+  return { layout: v.layout as SkeLayout, cards };
 }

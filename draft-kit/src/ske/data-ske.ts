@@ -189,3 +189,103 @@ export const HORIZON_LABEL: Record<Horizon, string> = {
 export function cqiFromValue(v: number): CqiLevel {
   return v < 0.5 ? 'High' : v < 1.0 ? 'Medium' : 'Low';
 }
+
+// ── 기간 선택 타입 ────────────────────────────────────────────────────────────
+// KPI 시계열의 xViewRange(0~1 fraction)를 날짜 기간으로 변환한 버킷
+export type DateRange = '7d' | '14d' | '30d' | '90d' | '180d' | 'all';
+
+export const DATE_RANGE_LABEL: Record<DateRange, string> = {
+  '7d':   '7일',
+  '14d':  '14일',
+  '30d':  '30일',
+  '90d':  '90일',
+  '180d': '180일',
+  'all':  '전체',
+};
+
+// xViewRange span → DateRange 버킷 변환
+export function spanToDateRange(spanDays: number): DateRange {
+  if (spanDays <= 10)  return '7d';
+  if (spanDays <= 21)  return '14d';
+  if (spanDays <= 45)  return '30d';
+  if (spanDays <= 135) return '90d';
+  if (spanDays <= 225) return '180d';
+  return 'all';
+}
+
+// ── 기간별 스케일 팩터 (더미 데이터 생성용) ───────────────────────────────────
+// 기간이 길수록 누적 효과가 커지고, 그룹별 상대적 기여도 패턴도 미묘하게 달라짐
+const RANGE_SCALE: Record<DateRange, number> = {
+  '7d':   0.25,
+  '14d':  0.50,
+  '30d':  1.0,
+  '90d':  2.8,
+  '180d': 5.2,
+  'all':  9.1,
+};
+
+// 그룹별 기간 가중치 — 기간이 길수록 일부 요인이 더 두드러지게
+const GROUP_RANGE_WEIGHT: Record<string, Record<DateRange, number>> = {
+  '원유조성':       { '7d': 0.90, '14d': 0.95, '30d': 1.00, '90d': 1.15, '180d': 1.35, 'all': 1.55 },
+  '2차공정 처리비율': { '7d': 1.05, '14d': 1.02, '30d': 1.00, '90d': 0.92, '180d': 0.85, 'all': 0.78 },
+  '원유처리량':      { '7d': 0.95, '14d': 0.97, '30d': 1.00, '90d': 1.08, '180d': 1.18, 'all': 1.30 },
+  '환경/계절':       { '7d': 0.70, '14d': 0.85, '30d': 1.00, '90d': 1.22, '180d': 1.55, 'all': 2.10 },
+  '강우':           { '7d': 1.20, '14d': 1.10, '30d': 1.00, '90d': 1.40, '180d': 2.00, 'all': 2.80 },
+};
+
+// 피처별 추가 가중치 (일부 피처는 장기일수록 더 중요)
+const FEATURE_RANGE_WEIGHT: Record<string, Record<DateRange, number>> = {
+  'CDU_ma7':       { '7d': 0.6, '14d': 0.8, '30d': 1.0, '90d': 1.2, '180d': 1.5, 'all': 1.9 },
+  'CDU_diff':      { '7d': 1.4, '14d': 1.2, '30d': 1.0, '90d': 0.7, '180d': 0.5, 'all': 0.4 },
+  'season_cos':    { '7d': 0.5, '14d': 0.7, '30d': 1.0, '90d': 1.4, '180d': 2.0, 'all': 2.8 },
+  'season_sin':    { '7d': 0.5, '14d': 0.7, '30d': 1.0, '90d': 1.3, '180d': 1.8, 'all': 2.4 },
+  'ATM_Temp':      { '7d': 0.8, '14d': 0.9, '30d': 1.0, '90d': 1.1, '180d': 1.4, 'all': 1.8 },
+  'ATM_Temp_ma7':  { '7d': 0.6, '14d': 0.8, '30d': 1.0, '90d': 1.2, '180d': 1.6, 'all': 2.1 },
+  'heavy_ratio':   { '7d': 0.9, '14d': 0.95, '30d': 1.0, '90d': 1.05, '180d': 1.12, 'all': 1.2 },
+  'rain_intensity':{ '7d': 1.3, '14d': 1.15, '30d': 1.0, '90d': 1.3, '180d': 1.8, 'all': 2.5 },
+};
+
+// CQI: 기간이 길수록 평균 CQI가 중간값으로 수렴
+const RANGE_CQI: Record<DateRange, { avg: number; level: CqiLevel }> = {
+  '7d':   { avg: 0.280, level: 'High'   },
+  '14d':  { avg: 0.340, level: 'High'   },
+  '30d':  { avg: 0.405, level: 'High'   },
+  '90d':  { avg: 0.620, level: 'Medium' },
+  '180d': { avg: 0.780, level: 'Medium' },
+  'all':  { avg: 0.910, level: 'Medium' },
+};
+
+export function getSKEFactors(range: DateRange): FactorRow[] {
+  const scale = RANGE_SCALE[range];
+  const cqi   = RANGE_CQI[range];
+  return SKE_FACTORS.map(row => {
+    const gw = GROUP_RANGE_WEIGHT[row.group]?.[range] ?? 1.0;
+    const s  = scale * gw;
+    return {
+      ...row,
+      impact_mj:   row.impact_mj   * s,
+      impact_mwon: row.impact_mwon * s,
+      fg_bbl:      row.fg_bbl      * s,
+      stm_esston:  row.stm_esston  * s,
+      elec_kwh:    row.elec_kwh    * s,
+      cqi_avg:     cqi.avg,
+      cqi_level:   cqi.level,
+    };
+  });
+}
+
+export function getSKEDetail(range: DateRange): DetailRow[] {
+  const scale = RANGE_SCALE[range];
+  return SKE_DETAIL.map(row => {
+    const gw = GROUP_RANGE_WEIGHT[row.group]?.[range]    ?? 1.0;
+    const fw = FEATURE_RANGE_WEIGHT[row.feature]?.[range] ?? 1.0;
+    const s  = scale * gw * fw;
+    return {
+      ...row,
+      shap_raw:  row.shap_raw  * s,
+      shap_mj:   row.shap_mj   * s,
+      shap_mwon: row.shap_mwon * s,
+      // DetailRow에 cqi_level 없으므로 추가 불필요
+    };
+  });
+}
